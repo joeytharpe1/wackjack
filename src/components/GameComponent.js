@@ -6,7 +6,6 @@ import './game.css';
 
 import ComputerTwoToneIcon from '@material-ui/icons/ComputerTwoTone';
 import PersonTwoToneIcon from '@material-ui/icons/PersonTwoTone';
-import CardMedia from '@material-ui/core/CardMedia';
 import PlayArrowTwoToneIcon from '@material-ui/icons/PlayArrowTwoTone';
 
 
