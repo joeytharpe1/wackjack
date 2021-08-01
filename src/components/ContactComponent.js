@@ -111,12 +111,12 @@ function Contact() {
                             <Grid container alignItems="center">
                                 <Grid item xs>
                                     <Typography gutterBottom variant="h4">
-                                        Joseph Tharpe
+                                        Joseph Edmonds
                                     </Typography>
                                 </Grid>
                             </Grid>
                             <Typography color="textSecondary" variant="body2">
-                                proven track record of fast learning and giving my 100% to get the job done.
+                                Learn, apply, and dominate. Software developer on the rise..
                             </Typography>
                         </div>
                         <Divider variant="middle" />
@@ -126,12 +126,12 @@ function Contact() {
                             </Typography>
                             <div>
                                 <Chip className={classes.chip}
-                                    onClick={() => window.open('https://www.linkedin.com/in/joseph-tharpe')}
+                                    onClick={() => window.open('https://www.linkedin.com/in/joseph-edmonds-4b60a514a/')}
                                     label="LinkedIn" />
                                 <Chip className={classes.chip}
-                                    onClick={() => window.open('http://github.com/joeytharpe1')} color="primary" label="Github" />
+                                    onClick={() => window.open('http://github.com/100Joe')} color="primary" label="Github" />
                                 <Chip className={classes.chip}
-                                    onClick={() => window.open('http://jtharpe.netlify.app/')} label="Portfolio" />
+                                    onClick={() => window.open('/')} label="Portfolio" />
                             </div>
                         </div>
                     </Container>

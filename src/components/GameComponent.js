@@ -94,12 +94,12 @@ function Game() {
                                 dealerTotal > playerTotal ? (
                                     <Typography variant="h4" className={classes.dealer} gutterBottom>Dealer score is {dealerTotal} DEALER Wins ! 😢</Typography>
                                 ) :
-                                    <Typography variant="h4" gutterBottom>DRAW 🤞 Player score: {playerTotal}, Dealer score: {dealerTotal}</Typography>
+                                    <Typography variant="h4" color="textSecondary" gutterBottom>DRAW 🤞 Player score: {playerTotal}, Dealer score: {dealerTotal}</Typography>
                         }
                     </Grid>
                     <Grid item xs={2} md={2} align="center" justify="center">
                         <Button
-                        onClick={handleClick}
+                            onClick={handleClick}
                             variant="outlined"
                             color="inherit"
                             size="medium"
