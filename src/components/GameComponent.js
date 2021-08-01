@@ -28,11 +28,10 @@ const useStyles = makeStyles((theme) => ({
         color: 'red'
     },
     media: {
-        height: 325,
-        width: 250,
-        margin: 'auto',
         borderRadius: '10px',
-        border: '0.5px solid grey'
+        border: '0.5px solid grey',
+        transition: "transform 0.15s ease-in-out",
+        "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
 
     },
     button: {
@@ -77,8 +76,9 @@ function Game() {
     console.log(dealerCard2.a);
 
     let playerTotal = parseInt(playerCard.a) + parseInt(playerCard2.a)
-    console.log(playerTotal)
+    console.log(`player score: ${playerTotal}`);
     let dealerTotal = parseInt(dealerCard.a) + parseInt(dealerCard2.a)
+    console.log(`dealer score: ${dealerTotal}`);
 
     return (
         <Container className={classes.root}>
@@ -102,7 +102,7 @@ function Game() {
                             onClick={handleClick}
                             variant="outlined"
                             color="inherit"
-                            size="medium"
+                            size="small"
                             className={classes.buttonPlay}
                             startIcon={<PlayArrowTwoToneIcon />}
                         >
@@ -111,9 +111,8 @@ function Game() {
                     </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                    <Grid item xs={2} md={2} align="center" justify="center">
+                    <Grid item xs={4} md={2} align="center" justify="center">
                         <Button
-
                             size="small"
                             className={classes.button}
                             color='secondary'
@@ -123,23 +122,15 @@ function Game() {
                             Dealer
                         </Button>
                     </Grid>
-                    <Grid item xs={5} md={5} align="center" justify="center">
-                        <CardMedia
-                            className={classes.media}
-                            image={dealerCard.b}
-                            title={dealerCard.a}
-                        />
+                    <Grid item xs={4} md={5} align="center" justify="center">
+                        <img src={dealerCard.b} height='215px' title={dealerCard.a} alt='' />
                     </Grid>
-                    <Grid item xs={5} md={5} align="center" justify="center">
-                        <CardMedia
-                            className={classes.media}
-                            image={dealerCard2.b}
-                            title={dealerCard2.a}
-                        />
+                    <Grid item xs={4} md={5} align="center" justify="center">
+                        <img src={dealerCard2.b} height='215px' title={dealerCard2.a} alt='' />
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} className={classes.container2}>
-                    <Grid item xs={2} md={2} align="center" justify="center">
+                    <Grid item xs={4} md={2} align="center" justify="center">
                         <Button
 
                             size="small"
@@ -151,19 +142,11 @@ function Game() {
                             Player
                         </Button>
                     </Grid>
-                    <Grid item xs={5} md={5} align="center" justify="center">
-                        <CardMedia
-                            className={classes.media}
-                            image={playerCard.b}
-                            title={playerCard.a}
-                        />
+                    <Grid item xs={4} md={5} align="center" justify="center">
+                        <img src={playerCard.b} height='215px' title={playerCard.a} alt='' />
                     </Grid>
-                    <Grid item xs={5} md={5} align="center" justify="center">
-                        <CardMedia
-                            className={classes.media}
-                            image={playerCard2.b}
-                            title={playerCard2.a}
-                        />
+                    <Grid item xs={4} md={5} align="center" justify="center">
+                        <img src={playerCard2.b} height='215px' title={playerCard2.a} alt='' />
                     </Grid>
                 </Grid>
             </Container>

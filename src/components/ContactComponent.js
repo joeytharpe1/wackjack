@@ -142,8 +142,7 @@ function Contact() {
                 </Grid>
             </Grid>
         </Container>
-
-    )
+    );
 }
 
 export default Contact

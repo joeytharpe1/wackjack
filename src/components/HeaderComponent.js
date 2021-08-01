@@ -78,7 +78,7 @@ function Header() {
                 </Toolbar>
             </AppBar>
         </div>
-    )
+    );
 }
 
 export default Header

@@ -86,9 +86,6 @@ const useStyles = makeStyles((theme) => ({
 
     },
     media: {
-        height: 360,
-        width: 510,
-        margin: 'auto',
         border: '1px solid #116530',
         borderRadius: '10px',
         transition: "transform 0.15s ease-in-out",
@@ -134,8 +131,6 @@ function Home() {
         history.push('/game');
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
-    // const handleScroll = ()=> {
-    // }
 
     return (
         // containers are divs for whole page
@@ -162,19 +157,13 @@ function Home() {
             </Grid>
             <Grid container spacing={2} align="center" justify="center">
                 <Grid item xs={12} md={6}>
-                    <Fade right>
-                        <CardMedia
-                            className={classes.media}
-                            image='images/cardValues.png'
-                        />
+                    <Fade top>
+                    <img src='images/cardValues.png' height='280px' alt='cardvalues'/>
                     </Fade>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Fade right>
-                        <CardMedia
-                            className={classes.media}
-                            image='images/cardWinner.jpg'
-                        />
+                    <img src='images/cardWinner.jpg' height='280px' alt='blackjack' />
                     </Fade>
                 </Grid>
             </Grid>
@@ -271,7 +260,7 @@ function Home() {
             </Grid>
             </Roll>
         </Container>
-    )
+    );
 }
 
 export default Home
