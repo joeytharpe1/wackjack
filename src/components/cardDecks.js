@@ -157,7 +157,7 @@ export const deck = {
             "code": "AC",
             "image": "https://deckofcardsapi.com/static/img/AC.png",
 
-            "value": "11",
+            "value": "1",
             "suit": "CLUBS"
         },
         {
@@ -199,7 +199,7 @@ export const deck = {
             "code": "AD",
             "image": "https://deckofcardsapi.com/static/img/aceDiamonds.png",
 
-            "value": "11",
+            "value": "1",
             "suit": "DIAMONDS"
         },
         {

@@ -44,40 +44,40 @@ function Header() {
     return (
         <div className={classes.root}>
             {/* app bar acts as navbar component */}
-        <AppBar position="static" color="primary" >
-            
-            {/* tool bar is the nav links but are grouped together */}
-            <Toolbar>
-                <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
+            <AppBar position="static" color="primary" >
 
-                    {/* put button as component={link} to make the button a single page click button. 
+                {/* tool bar is the nav links but are grouped together */}
+                <Toolbar>
+                    <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
+
+                        {/* put button as component={link} to make the button a single page click button. 
                     basically when clicked on the links the page does not reload. Single Page Application */}
-                    <Button component={Link} to='/' className={classes.button}
-                        color='inherit'
-                        startIcon={<CardMembershipOutlinedIcon />}
-                    >
-                        Welcome
-                    </Button>
-                </Typography>
-                <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
-                    <Button component={Link} to='/Game' className={classes.button}
-                        color='inherit'
-                        startIcon={<GroupAddOutlinedIcon/>}
-                    >
-                        Game
-                    </Button >
-                </Typography>
-                <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
-                    <Button component={Link} to='/Contact' className={classes.button}
-                        color='inherit'
-                        startIcon={<ContactSupportOutlinedIcon/>}
-                    >
-                        Contact
-                    </Button >
-                </Typography>
-            </Toolbar>
-        </AppBar>
-    </div>
+                        <Button component={Link} to='/' className={classes.button}
+                            color='inherit'
+                            startIcon={<CardMembershipOutlinedIcon />}
+                        >
+                            Welcome
+                        </Button>
+                    </Typography>
+                    <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
+                        <Button component={Link} to='/Game' className={classes.button}
+                            color='inherit'
+                            startIcon={<GroupAddOutlinedIcon />}
+                        >
+                            Game
+                        </Button >
+                    </Typography>
+                    <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
+                        <Button component={Link} to='/Contact' className={classes.button}
+                            color='inherit'
+                            startIcon={<ContactSupportOutlinedIcon />}
+                        >
+                            Contact
+                        </Button >
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+        </div>
     )
 }
 
