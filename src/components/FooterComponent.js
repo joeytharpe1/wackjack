@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 50,
         flexGrow: 1,
         display: 'flex',
+        marginBottom: 0,
     },
     title: {
         flexGrow: 1,
@@ -43,7 +44,7 @@ function Footer() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-        <AppBar position="static" color="primary" >
+        <AppBar position="static" color="primary" className={classes.appbar} >
             <Toolbar>
                 <Typography variant="h4" color='textSecondary' className={classes.title} align="center">
                     <Button component={Link} to='/' className={classes.button}

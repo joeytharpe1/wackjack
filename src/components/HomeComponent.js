@@ -87,7 +87,8 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         height: 360,
-        width: 530,
+        width: 510,
+        margin: 'auto',
         border: '1px solid #116530',
         borderRadius: '10px',
         transition: "transform 0.15s ease-in-out",
@@ -180,13 +181,15 @@ function Home() {
 
             <Grid container spacing={2} className={classes.containerRules}>
                 <Grid item xs={12}>
+                    <Fade bottom>
                     <Typography variant='h5' gutterBottom align='center' color='secondary' className={classes.ruleTitle}>
                         14 key rules to follow when playing online Wackjack
                     </Typography>
+                    </Fade>
                 </Grid>
             </Grid>
 
-                <Roll bottom>
+                <Roll top>
             <Grid container spacing={2} align="center" className={classes.container}>
                     <Grid item xs={12} md={6} className={classes.item}>
                         <Tabs

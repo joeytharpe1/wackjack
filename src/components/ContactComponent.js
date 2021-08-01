@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +8,8 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import CardContent from '@material-ui/core/CardContent';
 
-import Roll from 'react-reveal/Roll'
+import Roll from 'react-reveal/Roll';
+import Fade from 'react-reveal/Fade';
 import TextLoop from "react-text-loop";
 
 const useStyles = makeStyles((theme) => ({
@@ -75,6 +75,7 @@ function Contact() {
             </Grid>
             <Grid container spacing={1}>
                 <Grid item xs={12} md={6}>
+                    <Fade left>
                     <Container className={classes.root}>
                         <div className={classes.section1}>
                             <Grid container alignItems="center">
@@ -104,8 +105,10 @@ function Contact() {
                             </div>
                         </div>
                     </Container>
+                    </Fade>
                 </Grid>
                 <Grid item xs={12} md={6}>
+                    <Fade right>
                     <Container className={classes.root}>
                         <div className={classes.section1}>
                             <Grid container alignItems="center">
@@ -135,6 +138,7 @@ function Contact() {
                             </div>
                         </div>
                     </Container>
+                    </Fade>
                 </Grid>
             </Grid>
         </Container>
