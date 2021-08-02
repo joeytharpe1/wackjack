@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { deck } from './cardDecks';
 import { useHistory } from 'react-router-dom'
 
@@ -7,6 +7,8 @@ import './game.css';
 import ComputerTwoToneIcon from '@material-ui/icons/ComputerTwoTone';
 import PersonTwoToneIcon from '@material-ui/icons/PersonTwoTone';
 import PlayArrowTwoToneIcon from '@material-ui/icons/PlayArrowTwoTone';
+import swal from 'sweetalert';
+
 
 
 import Button from '@material-ui/core/Button';
@@ -17,6 +19,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+    alert: {
+      backgroundColor: 'Teal',
+      fontWeight: 'bold'
+    },
     root: {
         backgroundColor: '#35654d'
     },
@@ -56,21 +62,52 @@ const useStyles = makeStyles((theme) => ({
 
 function Game() {
     const classes = useStyles();
+    const [scoreD, setScoreD] = useState(0);
+    const [scoreP, setScoreP] = useState(0);
+    const [open, setOpen] = useState(false);
 
     const history = useHistory();
 
     const handleClick = () => {
+        if (playerTotal > dealerTotal) {
+            setScoreP(prevScoreP => prevScoreP + 1);
+        } else if (playerTotal < dealerTotal) {
+            setScoreD(prevScoreD => prevScoreD + 1);
+        } else if (playerTotal === dealerTotal) {
+            setScoreP(scoreP + 0);
+            setScoreD(scoreD + 0)
+        }
+        if (scoreD === 21) {
+            swal({
+                title: "Try again?",
+                text: "YOU LOSE !",
+                icon: "error",
+                dangerMode: true,
+            });
+            setScoreD(0);
+            setScoreP(0);
+        }
+        else if (scoreP === 21) {
+            swal({
+                title: "HOT-STREAK",
+                text: "CONGRATS YOURE A WINNER !",
+                icon: "success",
+                dangerMode: false,
+            });
+            setScoreD(0);
+            setScoreP(0);
+        }
         history.push('/game');
     }
 
     const originalDeck = deck.cards.map(item => ({ a: item.value, b: item.image }))
 
     let playerCard = originalDeck[Math.floor(Math.random() * originalDeck.length)];
-    console.log(playerCard.a);
     let playerCard2 = originalDeck[Math.floor(Math.random() * originalDeck.length)];
-    console.log(playerCard2.a);
+
     let dealerCard = originalDeck[Math.floor(Math.random() * originalDeck.length)];
     console.log(dealerCard.a);
+    
     let dealerCard2 = originalDeck[Math.floor(Math.random() * originalDeck.length)];
     console.log(dealerCard2.a);
 
@@ -86,12 +123,12 @@ function Game() {
                     <Grid item xs={10} md={10} align="center" justify="center">
                         {
                             playerTotal > dealerTotal ? (
-                                <Typography variant="h4" color='secondary' gutterBottom>
+                                <Typography id='winner' variant="h4" color='secondary' gutterBottom>
                                     Player score is {playerTotal} PLAYER Wins ! 🏆
                                 </Typography>
                             ) :
                                 dealerTotal > playerTotal ? (
-                                    <Typography variant="h4" className={classes.dealer} gutterBottom>Dealer score is {dealerTotal} DEALER Wins ! 😢</Typography>
+                                    <Typography id='winner' variant="h4" className={classes.dealer} gutterBottom>Dealer score is {dealerTotal} DEALER Wins ! 😢</Typography>
                                 ) :
                                     <Typography variant="h4" color="textSecondary" gutterBottom>DRAW 🤞 Player score: {playerTotal}, Dealer score: {dealerTotal}</Typography>
                         }
@@ -105,7 +142,7 @@ function Game() {
                             className={classes.buttonPlay}
                             startIcon={<PlayArrowTwoToneIcon />}
                         >
-                            Play Again
+                            Again
                         </Button>
                     </Grid>
                 </Grid>
@@ -118,7 +155,7 @@ function Game() {
                             variant="contained"
                             startIcon={<ComputerTwoToneIcon />}
                         >
-                            Dealer
+                            Dealer: {scoreD}
                         </Button>
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
@@ -138,7 +175,7 @@ function Game() {
                             variant="contained"
                             startIcon={<PersonTwoToneIcon />}
                         >
-                            Player
+                            Player: {scoreP}
                         </Button>
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
