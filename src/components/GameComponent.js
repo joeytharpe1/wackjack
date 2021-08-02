@@ -75,7 +75,7 @@ function Game() {
             setScoreP(scoreP + 0);
             setScoreD(scoreD + 0)
         }
-        if (scoreD === 10) {
+        if (scoreD === 5) {
             swal({
                 title: "Try again?",
                 text: "YOU LOSE !",
@@ -85,7 +85,7 @@ function Game() {
             setScoreD(0);
             setScoreP(0);
         }
-        else if (scoreP === 10) {
+        else if (scoreP === 5) {
             swal({
                 title: "HOT-STREAK",
                 text: "CONGRATS YOURE A WINNER !",
