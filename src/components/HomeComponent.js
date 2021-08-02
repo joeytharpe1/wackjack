@@ -157,12 +157,12 @@ function Home() {
             <Grid container spacing={2} align="center" justify="center">
                 <Grid item xs={12} md={6}>
                     <Fade top>
-                    <img src='images/cardValues.png' height='280px' alt='cardvalues'/>
+                    <img src='images/cardValues.png' height='260px' alt='cardvalues'/>
                     </Fade>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Fade right>
-                    <img src='images/cardWinner.jpg' height='280px' alt='blackjack' />
+                    <img src='images/cardWinner.jpg' height='260px' alt='blackjack' />
                     </Fade>
                 </Grid>
             </Grid>

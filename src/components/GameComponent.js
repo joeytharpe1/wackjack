@@ -20,8 +20,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     alert: {
-      backgroundColor: 'Teal',
-      fontWeight: 'bold'
+        backgroundColor: 'Teal',
+        fontWeight: 'bold'
     },
     root: {
         backgroundColor: '#35654d'
@@ -75,7 +75,7 @@ function Game() {
             setScoreP(scoreP + 0);
             setScoreD(scoreD + 0)
         }
-        if (scoreD === 21) {
+        if (scoreD === 10) {
             swal({
                 title: "Try again?",
                 text: "YOU LOSE !",
@@ -85,7 +85,7 @@ function Game() {
             setScoreD(0);
             setScoreP(0);
         }
-        else if (scoreP === 21) {
+        else if (scoreP === 10) {
             swal({
                 title: "HOT-STREAK",
                 text: "CONGRATS YOURE A WINNER !",
@@ -157,10 +157,10 @@ function Game() {
                         </Button>
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
-                        <img src={dealerCard.b} height='215px' title={dealerCard.a} alt='' />
+                        <img src={dealerCard.b} height='210px' title={dealerCard.a} alt='' />
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
-                        <img src={dealerCard2.b} height='215px' title={dealerCard2.a} alt='' />
+                        <img src={dealerCard2.b} height='210px' title={dealerCard2.a} alt='' />
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} className={classes.container2}>
@@ -177,10 +177,10 @@ function Game() {
                         </Button>
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
-                        <img src={playerCard.b} height='215px' title={playerCard.a} alt='' />
+                        <img src={playerCard.b} height='210px' title={playerCard.a} alt='' />
                     </Grid>
                     <Grid item xs={4} md={5} align="center" justify="center">
-                        <img src={playerCard2.b} height='215px' title={playerCard2.a} alt='' />
+                        <img src={playerCard2.b} height='210px' title={playerCard2.a} alt='' />
                     </Grid>
                 </Grid>
             </Container>
