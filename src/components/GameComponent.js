@@ -64,8 +64,6 @@ function Game() {
     const classes = useStyles();
     const [scoreD, setScoreD] = useState(0);
     const [scoreP, setScoreP] = useState(0);
-    const [open, setOpen] = useState(false);
-
     const history = useHistory();
 
     const handleClick = () => {
@@ -107,7 +105,7 @@ function Game() {
 
     let dealerCard = originalDeck[Math.floor(Math.random() * originalDeck.length)];
     console.log(dealerCard.a);
-    
+
     let dealerCard2 = originalDeck[Math.floor(Math.random() * originalDeck.length)];
     console.log(dealerCard2.a);
 
